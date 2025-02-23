@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .navbar {
+            width: 100%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .navbar .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: #333;
+            padding: 8px 16px;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+        }
+        .navbar .nav-links a:hover {
+            background-color: #f1f1f1;
+        }
+        .navbar .brand {
+            font-weight: bold;
+            font-size: 24px;
+            color: #C3A683;
+            flex: 1;
+            text-align: center;
+        }
+        .search-container {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            margin-right: 40px; /* Erhöhter Abstand zum Rand */
+        }
+        .search-container input[type="text"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .search-container button {
+            background-color: #C3A683;
+            border: none;
+            padding: 8px 12px;
+            margin-left: 5px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        .search-container button img {
+            width: 16px;
+            height: 16px;
+        }
+        .search-container button:hover {
+            background-color: #b5916b;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-links">
+            <a href="file:///C:/Users/julia/Documents/HTML%20Codes/agbs.html">AGBs</a>
+            <a href="file:///C:/Users/julia/Documents/HTML%20Codes/Shop.html">Shop</a>
+            <a href="file:///C:/Users/julia/Documents/HTML%20Codes/webseite.html">Home</a>
+        </div>
+        <div class="brand">PowerPC</div>
+    </div>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website mit Popup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            position: relative;
+        }
+
+        #popup {
+            display: none; /* Popup standardmäßig ausblenden */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border: 2px solid #C3A683;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 400px;
+            z-index: 1000;
+            padding: 20px;
+            text-align: center;
+            transition: opacity 0.5s ease, transform 0.5s ease; /* Animation für das Verschwinden */
+        }
+
+        #popup h2 {
+            color: #C3A683;
+            margin-bottom: 20px;
+        }
+
+        #popup p {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .popup-button {
+            background-color: #C3A683;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .popup-button:hover {
+            background-color: #b5916b;
+        }
+
+        .popup-button:active {
+            transform: scale(0.95);
+        }
+
+        #popup-buttons {
+            display: flex;
+            justify-content: center;
+        }
+
+        #popup-buttons a {
+            margin: 0 10px;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (!sessionStorage.getItem('popupShown')) {
+                document.getElementById('popup').style.display = 'block';
+                sessionStorage.setItem('popupShown', 'true');
+            }
+        });
+
+        function closePopup() {
+            const popup = document.getElementById('popup');
+            popup.style.opacity = '0';
+            popup.style.transform = 'translate(-50%, -60%)';
+            setTimeout(() => {
+                popup.style.display = 'none';
+            }, 500); // Zeit der Animation abwarten
+        }
+    </script>
+</head>
+<body>
+    <!-- Popup -->
+    <div id="popup">
+        <h2>Willkommen</h2>
+        <p>Indem Sie diese Webseite nutzen, stimmen Sie unseren Allgemeinen Geschäftsbedingungen (AGB) und den Cookie-Richtlinien zu.</p>
+        <button onclick="closePopup()" class="popup-button">Zustimmen</button>
+        <div id="popup-buttons">
+            <a href="file:///C:/Users/julia/Documents/HTML%20Codes/agbs.html" target="_blank" class="popup-button">AGBs</a>
+            <a href="file:///C:/Users/julia/Documents/HTML%20Codes/cookis.html" target="_blank" class="popup-button">Cookie-Richtlinien</a>
+        </div>
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bildergalerie und Produkte</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .content {
+            margin-top: 50px; /* Weniger Platz für die imaginäre Navigationsleiste */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .gallery-container {
+            position: relative;
+            width: 98%; /* Näher an den Rand, 1% Abstand auf beiden Seiten */
+            max-width: 1400px; /* Maximale Breite weiter vergrößert */
+            overflow: hidden;
+        }
+        .gallery {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 200%; /* Breite auf 200% setzen, damit nur ein Bild pro Seite angezeigt wird */
+        }
+        .gallery img {
+            width: 50%; /* Bildbreite auf 50% setzen, um ein Bild pro Seite zu zeigen */
+            border-radius: 10px;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: transparent; /* Kein Hintergrund */
+            color: #333;
+            border: none;
+            font-size: 3rem; /* Größerer Pfeil */
+            cursor: pointer;
+            padding: 10px;
+        }
+        .arrow-left {
+            left: 10px;
+        }
+        .arrow-right {
+            right: 10px;
+        }
+        .top-seller {
+            margin-top: 20px;
+            font-size: 2.5rem;
+            color: #C3A683;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            justify-content: center; /* Zentriert den Inhalt horizontal */
+            margin-top: 20px; /* Geringerer Abstand für die Produkte */
+        }
+        .buy-button {
+            margin: 0; /* Entfernt den Standardabstand */
+            transition: transform 0.3s ease; /* Animation für sanfte Bewegung */
+        }
+        .buy-button:hover {
+            transform: translateY(-10px); /* Bewegung nach oben bei Hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="gallery-container">
+            <button class="arrow arrow-left" onclick="prevImage()">&#9664;</button>
+            <div class="gallery" id="gallery">
+                <img src="PowerPC.png" alt="Bild 1">
+                <img src="Banner 50€.png" alt="Bild 2">
+            </div>
+            <button class="arrow arrow-right" onclick="nextImage()">&#9654;</button>
+        </div>
+
+        <div class="top-seller">Top Seller</div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+
+        function showImage(index) {
+            const gallery = document.getElementById('gallery');
+            const images = gallery.getElementsByTagName('img');
+            const totalImages = images.length;
+            if (index >= 0 && index < totalImages) {
+                gallery.style.transform = `translateX(-${index * 50}%)`;
+                currentIndex = index;
+            }
+        }
+
+        function nextImage() {
+            const totalImages = document.getElementById('gallery').getElementsByTagName('img').length;
+            showImage((currentIndex + 1) % totalImages);
+        }
+
+        function prevImage() {
+            const totalImages = document.getElementById('gallery').getElementsByTagName('img').length;
+            showImage((currentIndex - 1 + totalImages) % totalImages);
+        }
+
+        // Automatischer Bildwechsel alle 10 Sekunden
+        setInterval(nextImage, 10000);
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stripe Buy Buttons</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center; /* Zentriert den Inhalt horizontal */
+            margin-top: 3cm; /* Fügt oben einen Abstand von 3 cm hinzu */
+        }
+        .buy-button {
+            margin: 0; /* Entfernt den Standardabstand */
+            transition: transform 0.3s ease; /* Animation für sanfte Bewegung */
+        }
+        .buy-button:hover {
+            transform: translateY(-10px); /* Bewegung nach oben bei Hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <stripe-buy-button
+            buy-button-id="buy_btn_1QRzltP6ouhHJ2LuTpr0pnpr"
+            publishable-key="pk_live_51PvjQyP6ouhHJ2LuB81wFP9xGihknOE6dIC9WQ02Qd35W0TNvkGAewAdhL8GikKFV4oS9IaB34KkNBIkVGO1xtHs00ZkiLNDFs"
+            class="buy-button"
+        >
+        </stripe-buy-button>
+        <stripe-buy-button
+            buy-button-id="buy_btn_1QRzjFP6ouhHJ2Lu5EAxq2gU"
+            publishable-key="pk_live_51PvjQyP6ouhHJ2LuB81wFP9xGihknOE6dIC9WQ02Qd35W0TNvkGAewAdhL8GikKFV4oS9IaB34KkNBIkVGO1xtHs00ZkiLNDFs"
+            class="buy-button"
+        >
+        </stripe-buy-button>
+        <stripe-buy-button
+            buy-button-id="buy_btn_1QRzlZP6ouhHJ2Lu1lRnVAIi"
+            publishable-key="pk_live_51PvjQyP6ouhHJ2LuB81wFP9xGihknOE6dIC9WQ02Qd35W0TNvkGAewAdhL8GikKFV4oS9IaB34KkNBIkVGO1xtHs00ZkiLNDFs"
+            class="buy-button"
+        >
+        </stripe-buy-button>
+    </div>
+    
+    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Runde Soziale Medien Symbole</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .content {
+            flex: 1; /* Damit der Inhalt den verfügbaren Platz einnimmt */
+            padding: 20px;
+        }
+
+        .footer {
+            background-color: #C3A683;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .footer .links {
+            margin-bottom: 10px;
+        }
+
+        .footer .links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            border-radius: 5px;
+            padding: 5px 10px;
+            background-color: #444;
+        }
+
+        .footer .links a:hover {
+            background-color: #555;
+        }
+
+        .footer .bottom-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer .payment-options {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            gap: 10px;
+        }
+
+        .footer .payment-options img {
+            width: 40px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .footer .year-created {
+            display: flex;
+            gap: 10px;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .social-media-buttons {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: -50px; /* Positioniert die Symbole kurz über dem Footer */
+            width: 100%;
+        }
+
+        .social-media-buttons a {
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 2rem;
+        }
+
+        .social-media-buttons img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .social-media-buttons img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <!-- Restlicher Inhalt der Webseite -->
+    </div>
+    
+    <!-- Footer-Bereich -->
+    <div class="footer">
+        <!-- Soziale Medien Buttons -->
+        <div class="social-media-buttons">
+            <a href="https://www.tiktok.com/@powerpc85" target="_blank">
+                <img src="Ticktok-symbol.png" alt="TikTok">
+            </a>
+            <a href="https://www.instagram.com/powerpc700/" target="_blank">
+                <img src="Instagram_logo_2022.svg.png" alt="Instagram">
+            </a>
+            <a href="https://de.pinterest.com/powerpc700/" target="_blank">
+                <img src="Pinterest-Logo-2011-present.png" alt="Pinterest">
+            </a>
+        </div>
+        <div class="links">
+            <a href="file:///C:/Users/julia/Documents/HTML%20Codes/agbs.html">AGBs</a>
+            <a href="file:///C:/Users/julia/Documents/HTML%20Codes/datenschutz%20bedinugen.html">Datenschutzbestimmungen</a>
+            <a href="file:///C:/Users/julia/Documents/HTML%20Codes/Versandbedinungen.html">Versandbedingungen</a>
+            <a href="file:///C:/Users/julia/Documents/HTML%20Codes/R%C3%BCckerstattungs%20pflicht%20.html">Rückerstattungspflicht</a>
+        </div>
+        <div class="bottom-section">
+            <div class="payment-options">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Mastercard_2019_logo.svg" alt="Mastercard">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+            </div>
+        </div>
+        <div class="year-created">
+            <div class="year">© <span id="currentYear"></span> PowerPC. Alle Rechte vorbehalten.</div>
+            <div class="created-by">create by PowerPC</div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hilfe-Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .chatbot-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #C3A683;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+            font-family: Arial, sans-serif;
+        }
+        .chatbot-icon:hover {
+            transform: scale(1.1);
+        }
+        .chatbot-window {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 300px;
+            height: 400px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            flex-direction: column;
+            overflow: hidden;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            font-family: Arial, sans-serif;
+        }
+        .chatbot-window.open {
+            display: flex;
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .chatbot-window.close {
+            display: flex;
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        .chatbot-header {
+            background-color: #C3A683;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .chatbot-messages {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+            font-family: Arial, sans-serif;
+        }
+        .chatbot-input {
+            display: flex;
+            border-top: 1px solid #ddd;
+            font-family: Arial, sans-serif;
+        }
+        .chatbot-input input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-right: 1px solid #ddd;
+            font-family: Arial, sans-serif;
+        }
+        .chatbot-input button {
+            padding: 10px;
+            background-color: #C3A683;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+        }
+        .chatbot-email-link {
+            text-decoration: underline;
+            color: blue;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+<button class="chatbot-icon" onclick="toggleChatbot()">💬</button>
+
+<div class="chatbot-window" id="chatbotWindow">
+    <div class="chatbot-header">
+        Hilfe-Chatbot
+    </div>
+    <div class="chatbot-messages" id="chatbotMessages">
+        <p>Willkommen! Wie kann ich dir helfen?</p>
+    </div>
+    <div class="chatbot-input">
+        <input type="text" id="chatbotInput" placeholder="Nachricht eingeben..." onkeydown="if(event.key === 'Enter') sendMessage()">
+        <button onclick="sendMessage()">Senden</button>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('click', function(event) {
+        const chatbotWindow = document.getElementById('chatbotWindow');
+        const chatbotIcon = document.querySelector('.chatbot-icon');
+        if (!chatbotWindow.contains(event.target) && !chatbotIcon.contains(event.target)) {
+            closeChatbot();
+        }
+    });
+
+    function toggleChatbot() {
+        const chatbotWindow = document.getElementById('chatbotWindow');
+        if (chatbotWindow.style.display === 'none' || chatbotWindow.classList.contains('close')) {
+            chatbotWindow.classList.remove('close');
+            chatbotWindow.classList.add('open');
+            chatbotWindow.style.display = 'flex';
+        } else {
+            closeChatbot();
+        }
+    }
+
+    function closeChatbot() {
+        const chatbotWindow = document.getElementById('chatbotWindow');
+        chatbotWindow.classList.remove('open');
+        chatbotWindow.classList.add('close');
+        setTimeout(() => {
+            chatbotWindow.style.display = 'none';
+        }, 300);
+    }
+
+    function sendMessage() {
+        const input = document.getElementById('chatbotInput');
+        const message = input.value.trim();
+        if (message) {
+            const messages = document.getElementById('chatbotMessages');
+            const userMessage = document.createElement('p');
+            userMessage.textContent = message;
+            userMessage.style.textAlign = 'right';
+            messages.appendChild(userMessage);
+
+            const botMessage = document.createElement('p');
+            botMessage.textContent = 'Danke für deine Nachricht! Um sie zu senden, klicke bitte auf folgenden Button:';
+            messages.appendChild(botMessage);
+
+            const emailLink = document.createElement('a');
+            emailLink.href = 'mailto:powerpc700@gmail.com?subject=Hilfe-Anfrage&body=' + encodeURIComponent(message);
+            emailLink.textContent = 'Nachricht senden';
+            emailLink.className = 'chatbot-email-link';
+            messages.appendChild(emailLink);
+
+            input.value = '';
+            messages.scrollTop = messages.scrollHeight;
+        }
+    }
+
+    // Chatbot-Fenster beim Laden der Seite ausblenden
+    window.onload = () => {
+        document.getElementById('chatbotWindow').style.display = 'none';
+    };
+</script>
+
+</body>
+</html>

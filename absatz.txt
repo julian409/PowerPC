@@ -1,0 +1,57 @@
+<!DOCTYPE html> <html lang="de"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Navigation</title> <style> body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; } .navbar { width: 100%; background-color: white; display: flex; align-items: center; justify-content: space-between; padding: 10px 20px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); position: fixed; top: 0; left: 0; z-index: 1000; } .navbar .nav-links { display: flex; gap: 20px; } .navbar .nav-links a { text-decoration: none; color: #333; padding: 8px 16px; border-radius: 3px; transition: background-color 0.3s; } .navbar .nav-links a:hover { background-color: #f1f1f1; } .navbar .brand { font-weight: bold; font-size: 24px; color: #C3A683; flex: 1; text-align: center; } .search-container { display: flex; align-items: center; margin-left: auto; margin-right: 40px; /* Erhöhter Abstand zum Rand */ } .search-container input[type="text"] { padding: 8px; border: 1px solid #ccc; border-radius: 3px; } .search-container button { background-color: #C3A683; border: none; padding: 8px 12px; margin-left: 5px; cursor: pointer; border-radius: 3px; } .search-container button img { width: 16px; height: 16px; } .search-container button:hover { background-color: #b5916b; } </style> </head> <body> <div class="navbar"> <div class="nav-links"> <a href="file:///C:/Users/julia/Documents/HTML%20Codes/agbs.html">AGBs</a> <a href="file:///C:/Users/julia/Documents/HTML%20Codes/Shop.html">Shop</a> <a href="file:///C:/Users/julia/Documents/HTML%20Codes/webseite.html">Home</a> </div> <div class="brand">PowerPC</div> <div class="search-container"> <input type="text" placeholder="Produkte suchen..." id="searchInput"> <button onclick="searchProducts()"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Black_and_white_magnifying_glass_icon.svg/1024px-Black_and_white_magnifying_glass_icon.svg.png" alt="Suche"> </button> </div> </div> <script> document.getElementById('searchInput').addEventListener('keypress', function(event) { if (event.key === 'Enter') { searchProducts(); } }); function searchProducts() { const query = document.getElementById('searchInput').value.toLowerCase(); const products = [ 'produkt1', 'produkt2', 'produkt3', 'produkt4', 'produkt5', 'produkt6', 'produkt7', 'produkt8', 'produkt9', 'produkt10', 'produkt11', 'produkt12' ]; const results = products.filter(product => product.toLowerCase().includes(query)); if (results.length > 0) { alert('Gefundene Produkte: ' + results.join(', ')); } else { alert('Keine Produkte gefunden.'); } } </script>  <!DOCTYPE html> <html lang="de"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Footer Beispiel</title> <style> body { margin: 0; padding: 0; font-family: Arial, sans-serif; display: flex; flex-direction: column; min-height: 100vh; } .content { flex: 1; } .footer { background-color: #C3A683; color: white; padding: 20px 0; text-align: center; width: 100%; display: flex; flex-direction: column; align-items: center; } .footer .links { margin-bottom: 10px; } .footer .links a { color: white; text-decoration: none; margin: 0 10px; border-radius: 5px; padding: 5px 10px; background-color: #444; } .footer .links a:hover { background-color: #555; } .footer .bottom-section { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; } .footer .payment-options { display: flex; justify-content: center; width: 100%; gap: 10px; } .footer .payment-options img { width: 40px; height: auto; object-fit: contain; } .footer .year-created { display: flex; gap: 10px; font-size: 14px; margin-top: 10px; } </style> </head> <body> <div class="content"> <!-- Restlicher Inhalt der Webseite --> </div> <div class="footer"> <div class="links"> <a href="file:///C:/Users/julia/Documents/HTML%20Codes/agbs.html">AGBs</a> <a href="file:///C:/Users/julia/Documents/HTML%20Codes/datenschutz%20bedinugen.html">Datenschutzbestimmungen</a> <a href="file:///C:/Users/julia/Documents/HTML%20Codes/Versandbedinungen.html">Versandbedingungen</a> <a href="file:///C:/Users/julia/Documents/HTML%20Codes/R%C3%BCckerstattungs%20pflicht%20.html">Rückerstattungspflicht</a> </div> <div class="bottom-section"> <div class="payment-options"> <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa"> <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Mastercard_2019_logo.svg" alt="Mastercard"> <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal"> </div> </div> <div class="year-created"> <div class="year">© <span id="currentYear"></span> PowerPC. Alle Rechte vorbehalten.</div> <div class="created-by">create by PowerPC</div> </div> </div> <script> document.getElementById('currentYear').textContent = new Date().getFullYear(); </script> </body> </html>  
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Runde Soziale Medien Symbole</title>
+    <style>
+        .social-media-buttons {
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            bottom: 5cm; /* Positioniert die Symbole 5 cm über dem unteren Rand */
+            width: 100%;
+        }
+
+        .social-media-buttons a {
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 2rem;
+        }
+
+        .social-media-buttons img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .social-media-buttons img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Soziale Medien Buttons -->
+    <div class="social-media-buttons">
+        <a href="https://www.tiktok.com/@powerpc85" target="_blank">
+            <img src="Ticktok-symbol.png" alt="TikTok">
+        </a>
+        <a href="https://www.instagram.com/powerpc700/" target="_blank">
+            <img src="Instagram_logo_2022.svg.png" alt="Instagram">
+        </a>
+        <a href="https://de.pinterest.com/powerpc700/" target="_blank">
+            <img src="Pinterest-Logo-2011-present.png" alt="Pinterest">
+        </a>
+    </div>
+
+    <!-- Footer-Bereich -->
+    <div class="footer">
+        <!-- Inhalt des Footers -->
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stripe Buy Buttons</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            margin-top: 3cm;
+        }
+        .buy-button {
+            margin: 0 10px;
+            transition: transform 0.3s ease;
+        }
+        .buy-button:hover {
+            transform: translateY(-10px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <stripe-buy-button
+            buy-button-id="buy_btn_1QRzltP6ouhHJ2LuTpr0pnpr"
+            publishable-key="pk_live_51PvjQyP6ouhHJ2LuB81wFP9xGihknOE6dIC9WQ02Qd35W0TNvkGAewAdhL8GikKFV4oS9IaB34KkNBIkVGO1xtHs00ZkiLNDFs"
+            class="buy-button"
+        >
+        </stripe-buy-button>
+        <stripe-buy-button
+            buy-button-id="buy_btn_1QRzjFP6ouhHJ2Lu5EAxq2gU"
+            publishable-key="pk_live_51PvjQyP6ouhHJ2LuB81wFP9xGihknOE6dIC9WQ02Qd35W0TNvkGAewAdhL8GikKFV4oS9IaB34KkNBIkVGO1xtHs00ZkiLNDFs"
+            class="buy-button"
+        >
+        </stripe-buy-button>
+        <stripe-buy-button
+            buy-button-id="buy_btn_1QRzlZP6ouhHJ2Lu1lRnVAIi"
+            publishable-key="pk_live_51PvjQyP6ouhHJ2LuB81wFP9xGihknOE6dIC9WQ02Qd35W0TNvkGAewAdhL8GikKFV4oS9IaB34KkNBIkVGO1xtHs00ZkiLNDFs"
+            class="buy-button"
+        >
+        </stripe-buy-button>
+    </div>
+    
+    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+</body>
+</html>

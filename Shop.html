@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .navbar {
+            width: 100%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .navbar .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: #333;
+            padding: 8px 16px;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+        }
+        .navbar .nav-links a:hover {
+            background-color: #f1f1f1;
+        }
+        .navbar .brand {
+            font-weight: bold;
+            font-size: 24px;
+            color: #C3A683;
+            flex: 1;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-links">
+            <a href="file:///C:/Users/julia/Documents/HTML%20Codes/agbs.html">AGBs</a>
+            <a href="file:///C:/Users/julia/Documents/HTML%20Codes/Shop.html">Shop</a>
+            <a href="file:///C:/Users/julia/Documents/HTML%20Codes/webseite.html">Home</a>
+        </div>
+        <div class="brand">PowerPC</div>
+    </div>
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stripe Buy Buttons</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center; /* Zentriert den Inhalt horizontal */
+            margin-top: 3cm; /* Fügt oben einen Abstand von 3 cm hinzu */
+        }
+        .buy-button {
+            margin: 0; /* Entfernt den Standardabstand */
+            transition: transform 0.3s ease; /* Animation für sanfte Bewegung */
+        }
+        .buy-button:hover {
+            transform: translateY(-10px); /* Bewegung nach oben bei Hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <stripe-buy-button
+            buy-button-id="buy_btn_1QRzltP6ouhHJ2LuTpr0pnpr"
+            publishable-key="pk_live_51PvjQyP6ouhHJ2LuB81wFP9xGihknOE6dIC9WQ02Qd35W0TNvkGAewAdhL8GikKFV4oS9IaB34KkNBIkVGO1xtHs00ZkiLNDFs"
+            class="buy-button"
+        >
+        </stripe-buy-button>
+        <stripe-buy-button
+            buy-button-id="buy_btn_1QRzjFP6ouhHJ2Lu5EAxq2gU"
+            publishable-key="pk_live_51PvjQyP6ouhHJ2LuB81wFP9xGihknOE6dIC9WQ02Qd35W0TNvkGAewAdhL8GikKFV4oS9IaB34KkNBIkVGO1xtHs00ZkiLNDFs"
+            class="buy-button"
+        >
+        </stripe-buy-button>
+        <stripe-buy-button
+            buy-button-id="buy_btn_1QRzlZP6ouhHJ2Lu1lRnVAIi"
+            publishable-key="pk_live_51PvjQyP6ouhHJ2LuB81wFP9xGihknOE6dIC9WQ02Qd35W0TNvkGAewAdhL8GikKFV4oS9IaB34KkNBIkVGO1xtHs00ZkiLNDFs"
+            class="buy-button"
+        >
+        </stripe-buy-button>
+    </div>
+    
+    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+</body>
+</html>
+
+<!-- Abschnitt zwei -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stripe Buy Buttons</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center; /* Zentriert den Inhalt horizontal */
+            margin-top: 3cm; /* Fügt oben einen Abstand von 3 cm hinzu */
+        }
+        .buy-button {
+            margin: 0; /* Entfernt den Standardabstand */
+            transition: transform 0.3s ease; /* Animation für sanfte Bewegung */
+        }
+        .buy-button:hover {
+            transform: translateY(-10px); /* Bewegung nach oben bei Hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <stripe-buy-button
+            buy-button-id="buy_btn_1QS05rP6ouhHJ2Lua0vGDeQj"
+            publishable-key="pk_live_51PvjQyP6ouhHJ2LuB81wFP9xGihknOE6dIC9WQ02Qd35W0TNvkGAewAdhL8GikKFV4oS9IaB34KkNBIkVGO1xtHs00ZkiLNDFs"
+            class="buy-button"
+        >
+        </stripe-buy-button>
+        <stripe-buy-button
+            buy-button-id="buy_btn_1QS09KP6ouhHJ2LurGtXJVj7"
+            publishable-key="pk_live_51PvjQyP6ouhHJ2LuB81wFP9xGihknOE6dIC9WQ02Qd35W0TNvkGAewAdhL8GikKFV4oS9IaB34KkNBIkVGO1xtHs00ZkiLNDFs"
+            class="buy-button"
+        >
+        </stripe-buy-button>
+        <stripe-buy-button
+            buy-button-id="buy_btn_1QS0AeP6ouhHJ2LuQUtIsY8O"
+            publishable-key="pk_live_51PvjQyP6ouhHJ2LuB81wFP9xGihknOE6dIC9WQ02Qd35W0TNvkGAewAdhL8GikKFV4oS9IaB34KkNBIkVGO1xtHs00ZkiLNDFs"
+            class="buy-button"
+        >
+        </stripe-buy-button>
+    </div>
+    
+    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+</body>
+</html>
+
+<!-- Abschnitt drei -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stripe Buy Buttons</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center; /* Zentriert den Inhalt horizontal */
+            margin-top: 3cm; /* Fügt oben einen Abstand von 3 cm hinzu */
+        }
+        .buy-button {
+            margin: 0; /* Entfernt den Standardabstand */
+            transition: transform 0.3s ease; /* Animation für sanfte Bewegung */
+        }
+        .buy-button:hover {
+            transform: translateY(-10px); /* Bewegung nach oben bei Hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <stripe-buy-button
+            buy-button-id="buy_btn_1QS0BiP6ouhHJ2LuJtOq2gbO"
+            publishable-key="pk_live_51PvjQyP6ouhHJ2LuB81wFP9xGihknOE6dIC9WQ02Qd35W0TNvkGAewAdhL8GikKFV4oS9IaB34KkNBIkVGO1xtHs00ZkiLNDFs"
+            class="buy-button"
+        >
+        </stripe-buy-button>
+        <stripe-buy-button
+            buy-button-id="buy_btn_1QS0CrP6ouhHJ2Lum9trtGg6"
+            publishable-key="pk_live_51PvjQyP6ouhHJ2LuB81wFP9xGihknOE6dIC9WQ02Qd35W0TNvkGAewAdhL8GikKFV4oS9IaB34KkNBIkVGO1xtHs00ZkiLNDFs"
+            class="buy-button"
+        >
+        </stripe-buy-button>
+        <stripe-buy-button
+            buy-button-id="buy_btn_1QS0DrP6ouhHJ2LuH59HUZTm"
+            publishable-key="pk_live_51PvjQyP6ouhHJ2LuB81wFP9xGihknOE6dIC9WQ02Qd35W0TNvkGAewAdhL8GikKFV4oS9IaB34KkNBIkVGO1xtHs00ZkiLNDFs"
+            class="buy-button"
+        >
+        </stripe-buy-button>
+    </div>
+    
+    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+</body>
+</html>
+
+
+<Zweiter Abschnitt Der zwei Dreier Produkten>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stripe Buy Buttons</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center; /* Zentriert den Inhalt horizontal */
+            margin-top: 3cm; /* Fügt oben einen Abstand von 3 cm hinzu */
+        }
+        .buy-button {
+            margin: 0; /* Entfernt den Standardabstand */
+            transition: transform 0.3s ease; /* Animation für sanfte Bewegung */
+        }
+        .buy-button:hover {
+            transform: translateY(-10px); /* Bewegung nach oben bei Hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <stripe-buy-button
+            buy-button-id="buy_btn_1QS15fP6ouhHJ2LuuZaUDIOT"
+            publishable-key="pk_live_51PvjQyP6ouhHJ2LuB81wFP9xGihknOE6dIC9WQ02Qd35W0TNvkGAewAdhL8GikKFV4oS9IaB34KkNBIkVGO1xtHs00ZkiLNDFs"
+            class="buy-button"
+        >
+        </stripe-buy-button>
+        <stripe-buy-button
+            buy-button-id="buy_btn_1QS16mP6ouhHJ2LuAQ4zdb2z"
+            publishable-key="pk_live_51PvjQyP6ouhHJ2LuB81wFP9xGihknOE6dIC9WQ02Qd35W0TNvkGAewAdhL8GikKFV4oS9IaB34KkNBIkVGO1xtHs00ZkiLNDFs"
+            class="buy-button"
+        >
+        </stripe-buy-button>
+        <stripe-buy-button
+            buy-button-id="buy_btn_1QS17qP6ouhHJ2LuED6oMMcL"
+            publishable-key="pk_live_51PvjQyP6ouhHJ2LuB81wFP9xGihknOE6dIC9WQ02Qd35W0TNvkGAewAdhL8GikKFV4oS9IaB34KkNBIkVGO1xtHs00ZkiLNDFs"
+            class="buy-button"
+        >
+        </stripe-buy-button>
+    </div>
+    
+    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+</body>
+</html>
+
+<!-- Abschnitt zwei -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stripe Buy Buttons</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center; /* Zentriert den Inhalt horizontal */
+            margin-top: 3cm; /* Fügt oben einen Abstand von 3 cm hinzu */
+        }
+        .buy-button {
+            margin: 0; /* Entfernt den Standardabstand */
+            transition: transform 0.3s ease; /* Animation für sanfte Bewegung */
+        }
+        .buy-button:hover {
+            transform: translateY(-10px); /* Bewegung nach oben bei Hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <stripe-buy-button
+            buy-button-id="buy_btn_1QS18mP6ouhHJ2Lub1OIXYuG"
+            publishable-key="pk_live_51PvjQyP6ouhHJ2LuB81wFP9xGihknOE6dIC9WQ02Qd35W0TNvkGAewAdhL8GikKFV4oS9IaB34KkNBIkVGO1xtHs00ZkiLNDFs"
+            class="buy-button"
+        >
+        </stripe-buy-button>
+        <stripe-buy-button
+            buy-button-id="buy_btn_1QS19oP6ouhHJ2LuZOt3b9wX"
+            publishable-key="pk_live_51PvjQyP6ouhHJ2LuB81wFP9xGihknOE6dIC9WQ02Qd35W0TNvkGAewAdhL8GikKFV4oS9IaB34KkNBIkVGO1xtHs00ZkiLNDFs"
+            class="buy-button"
+        >
+        </stripe-buy-button>
+        <stripe-buy-button
+            buy-button-id="buy_btn_1QS1AsP6ouhHJ2LuVzT0t0On"
+            publishable-key="pk_live_51PvjQyP6ouhHJ2LuB81wFP9xGihknOE6dIC9WQ02Qd35W0TNvkGAewAdhL8GikKFV4oS9IaB34KkNBIkVGO1xtHs00ZkiLNDFs"
+            class="buy-button"
+        >
+        </stripe-buy-button>
+    </div>
+    
+    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+</body>
+</html>
+
+<!-- Abschnitt drei -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stripe Buy Buttons</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center; /* Zentriert den Inhalt horizontal */
+            margin-top: 3cm; /* Fügt oben einen Abstand von 3 cm hinzu */
+        }
+        .buy-button {
+            margin: 0; /* Entfernt den Standardabstand */
+            transition: transform 0.3s ease; /* Animation für sanfte Bewegung */
+        }
+        .buy-button:hover {
+            transform: translateY(-10px); /* Bewegung nach oben bei Hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <stripe-buy-button
+            buy-button-id="buy_btn_1QS1BuP6ouhHJ2Lub0QEWrwR"
+            publishable-key="pk_live_51PvjQyP6ouhHJ2LuB81wFP9xGihknOE6dIC9WQ02Qd35W0TNvkGAewAdhL8GikKFV4oS9IaB34KkNBIkVGO1xtHs00ZkiLNDFs"
+            class="buy-button"
+        >
+        </stripe-buy-button>
+        <stripe-buy-button
+            buy-button-id="buy_btn_1QS1CwP6ouhHJ2Lu5JloIdJW"
+            publishable-key="pk_live_51PvjQyP6ouhHJ2LuB81wFP9xGihknOE6dIC9WQ02Qd35W0TNvkGAewAdhL8GikKFV4oS9IaB34KkNBIkVGO1xtHs00ZkiLNDFs"
+            class="buy-button"
+        >
+        </stripe-buy-button>
+        <stripe-buy-button
+            buy-button-id="buy_btn_1QS1E5P6ouhHJ2LuhfzT4Qtw"
+            publishable-key="pk_live_51PvjQyP6ouhHJ2LuB81wFP9xGihknOE6dIC9WQ02Qd35W0TNvkGAewAdhL8GikKFV4oS9IaB34KkNBIkVGO1xtHs00ZkiLNDFs"
+            class="buy-button"
+        >
+        </stripe-buy-button>
+    </div>
+    
+    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+</body>
+</html>
+
+<dritte abschitt der dreier produkte>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stripe Buy Buttons</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center; /* Zentriert den Inhalt horizontal */
+            margin-top: 3cm; /* Fügt oben einen Abstand von 3 cm hinzu */
+        }
+        .buy-button {
+            margin: 0; /* Entfernt den Standardabstand */
+            transition: transform 0.3s ease; /* Animation für sanfte Bewegung */
+        }
+        .buy-button:hover {
+            transform: translateY(-10px); /* Bewegung nach oben bei Hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <stripe-buy-button
+            buy-button-id="buy_btn_1QS1GTP6ouhHJ2Lu6eUZ9Fkb"
+            publishable-key="pk_live_51PvjQyP6ouhHJ2LuB81wFP9xGihknOE6dIC9WQ02Qd35W0TNvkGAewAdhL8GikKFV4oS9IaB34KkNBIkVGO1xtHs00ZkiLNDFs"
+            class="buy-button"
+        >
+        </stripe-buy-button>
+        <stripe-buy-button
+            buy-button-id="buy_btn_1QS1HFP6ouhHJ2Lu7fpUlgQm"
+            publishable-key="pk_live_51PvjQyP6ouhHJ2LuB81wFP9xGihknOE6dIC9WQ02Qd35W0TNvkGAewAdhL8GikKFV4oS9IaB34KkNBIkVGO1xtHs00ZkiLNDFs"
+            class="buy-button"
+        >
+               </stripe-buy-button>
+    </div>
+    
+    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+</body>
+</html>
+
+
+<!DOCTYPE html> <html lang="de"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Footer Beispiel</title> <style> body { margin: 0; padding: 0; font-family: Arial, sans-serif; display: flex; flex-direction: column; min-height: 100vh; } .content { flex: 1; } .footer { background-color: #C3A683; color: white; padding: 20px 0; text-align: center; width: 100%; display: flex; flex-direction: column; align-items: center; } .footer .links { margin-bottom: 10px; } .footer .links a { color: white; text-decoration: none; margin: 0 10px; border-radius: 5px; padding: 5px 10px; background-color: #444; } .footer .links a:hover { background-color: #555; } .footer .bottom-section { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; } .footer .payment-options { display: flex; justify-content: center; width: 100%; gap: 10px; } .footer .payment-options img { width: 40px; height: auto; object-fit: contain; } .footer .year-created { display: flex; gap: 10px; font-size: 14px; margin-top: 10px; } </style> </head> <body> <div class="content"> <!-- Restlicher Inhalt der Webseite --> </div> <div class="footer"> <div class="links"> <a href="file:///C:/Users/julia/Documents/HTML%20Codes/agbs.html">AGBs</a> <a href="file:///C:/Users/julia/Documents/HTML%20Codes/datenschutz%20bedinugen.html">Datenschutzbestimmungen</a> <a href="file:///C:/Users/julia/Documents/HTML%20Codes/Versandbedinungen.html">Versandbedingungen</a> <a href="file:///C:/Users/julia/Documents/HTML%20Codes/R%C3%BCckerstattungs%20pflicht%20.html">Rückerstattungspflicht</a> </div> <div class="bottom-section"> <div class="payment-options"> <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa"> <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Mastercard_2019_logo.svg" alt="Mastercard"> <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal"> </div> </div> <div class="year-created"> <div class="year">© <span id="currentYear"></span> PowerPC. Alle Rechte vorbehalten.</div> <div class="created-by">create by PowerPC</div> </div> </div> <script> document.getElementById('currentYear').textContent = new Date().getFullYear(); </script> </body> </html>

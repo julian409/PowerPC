@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Runde Soziale Medien Symbole</title>
+    <style>
+        .social-media-buttons {
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            bottom: 5cm; /* Positioniert die Symbole 5 cm über dem unteren Rand */
+            width: 100%;
+        }
+
+        .social-media-buttons a {
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 2rem;
+        }
+
+        .social-media-buttons img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .social-media-buttons img:hover {
+            transform: scale(1.1);
+        }
+
+        .content {
+            height: 2000px; /* Beispielhafter Inhalt, um Scrollen zu ermöglichen */
+            padding: 20px;
+        }
+
+        .footer {
+            height: 100px; /* Beispiel-Style für den Footer */
+            background-color: #f1f1f1;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <!-- Inhalt der Webseite -->
+    <div class="content">
+        <h1>Willkommen zu meiner Webseite</h1>
+        <p>Hier ist der Hauptinhalt der Seite. Dieser Abschnitt kann nach oben und unten gescrollt werden, während die sozialen Medien Symbole fest am unteren Rand des Bildschirms bleiben.</p>
+    </div>
+
+    <!-- Soziale Medien Buttons -->
+    <div class="social-media-buttons">
+        <a href="https://www.tiktok.com/@powerpc85" target="_blank">
+            <img src="Ticktok-symbol.png" alt="TikTok">
+        </a>
+        <a href="https://www.instagram.com/powerpc700/" target="_blank">
+            <img src="Instagram_logo_2022.svg.png" alt="Instagram">
+        </a>
+        <a href="https://de.pinterest.com/powerpc700/" target="_blank">
+            <img src="Pinterest-Logo-2011-present.png" alt="Pinterest">
+        </a>
+    </div>
+
+    <!-- Footer-Bereich -->
+    <div class="footer">
+        <!-- Inhalt des Footers -->
+    </div>
+</body>
+</html>
