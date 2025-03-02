@@ -912,6 +912,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         .chat-bubble.show-image img {
             display: block;
         }
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: transparent;
+            border: none;
+            color: #ffffff;
+            font-size: 20px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .close-button:hover {
+            transform: rotate(90deg);
+        }
     </style>
     <script>
         function showChatBubble() {
@@ -940,6 +954,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </head>
 <body>
     <div class="chat-bubble">
+        <button class="close-button" onclick="hideChatBubble()">✖</button>
         Benötigen Sie Hilfe?
         <div class="chat-buttons">
             <button onclick="handleYesClick()">Ja</button>
@@ -950,3 +965,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </body>
 </html>
+
