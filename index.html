@@ -966,3 +966,53 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </body>
 </html>
 
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Webseite</title>
+    <style>
+        /* Basisstile */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 1200px; /* Maximale Breite für große Bildschirme */
+        }
+        h1, p {
+            margin: 0 0 20px 0;
+        }
+
+        /* Stile für Tablets (Bildschirmbreite zwischen 600px und 1024px) */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+
+        /* Stile für Smartphones (Bildschirmbreite unter 600px) */
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Willkommen auf meiner Webseite</h1>
+        <p>Hier ist ein Beispieltext, der sich dem Bildschirm anpasst, um auf verschiedenen Geräten gut auszusehen.</p>
+    </div>
+</body>
+</html>
