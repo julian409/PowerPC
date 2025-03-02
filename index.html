@@ -837,3 +837,116 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   gtag('config', 'G-40SZDLM0PP');
 </script>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hilfe-Benachrichtigung</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 200vh; /* Höhe der Seite, um Scrollen zu ermöglichen */
+        }
+        .chat-bubble {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 4cm; /* Positionierung 4 cm vom rechten Rand */
+            background-color: #ca9968;
+            color: #ffffff;
+            padding: 20px 30px; /* Größere Sprechblase */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeOut {
+            from { opacity: 1; transform: translateY(0); }
+            to { opacity: 0; transform: translateY(20px); }
+        }
+        .chat-buttons {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+        }
+        .chat-buttons button {
+            background-color: #ffffff;
+            color: #ca9968;
+            border: 2px solid #ca9968;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .chat-buttons button:hover {
+            background-color: #ca9968;
+            color: #ffffff;
+        }
+        .arrow-left {
+            display: none;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid #ca9968;
+            margin-left: 10px;
+        }
+        .chat-bubble.show-arrow .arrow-left {
+            display: inline-block;
+        }
+        .chat-bubble img {
+            display: none;
+            margin-top: 10px;
+            max-width: 100px; /* Maximalbreite des Bildes */
+            animation: fadeInImage 1s ease-in-out;
+        }
+        @keyframes fadeInImage {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .chat-bubble.show-image img {
+            display: block;
+        }
+    </style>
+    <script>
+        function showChatBubble() {
+            const chatBubble = document.querySelector('.chat-bubble');
+            chatBubble.style.display = 'block';
+            setTimeout(hideChatBubble, 10000); // Verstecke die Sprechblase nach 10 Sekunden
+        }
+        
+        function hideChatBubble() {
+            const chatBubble = document.querySelector('.chat-bubble');
+            chatBubble.style.animation = 'fadeOut 1s ease-in-out';
+            setTimeout(() => { chatBubble.style.display = 'none'; }, 1000); // Verstecke nach der Animation
+        }
+        
+        function handleYesClick() {
+            // Zeige den Pfeil und das Bild
+            const chatBubble = document.querySelector('.chat-bubble');
+            chatBubble.classList.add('show-arrow');
+            chatBubble.classList.add('show-image');
+        }
+        
+        window.onload = function() {
+            setTimeout(showChatBubble, 10000); // Zeige die Sprechblase nach 10 Sekunden
+        }
+    </script>
+</head>
+<body>
+    <div class="chat-bubble">
+        Benötigen Sie Hilfe?
+        <div class="chat-buttons">
+            <button onclick="handleYesClick()">Ja</button>
+            <button onclick="hideChatBubble()">Nein</button>
+        </div>
+        <div class="arrow-left"></div>
+        <img src="Pfeil Nacxh Rechts.png" alt="Hilfe Bild"> <!-- Bild-Tag -->
+    </div>
+</body>
+</html>
